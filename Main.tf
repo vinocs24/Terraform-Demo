@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 module "VPC" {
-    source = "./VPC"
+    source = "./vpc"
 }
 
 module "EC2" {
