@@ -14,7 +14,7 @@ resource "aws_db_subnet_group" "rds_subnet_group" {
 
 /* Security Group for resources that want to access the Database */
 resource "aws_security_group" "db_access_sg" {
-  vpc_id      = "var.vpc_id
+  vpc_id      = var.vpc_id
   name        = var.environment-db-access-sg
   description = "Allow access to RDS"
 
