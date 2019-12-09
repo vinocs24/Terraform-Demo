@@ -28,7 +28,7 @@ module "EC2" {
 }
 
 module "RDS" {
-  source            = "./rds"
+  source            = "./RDS"
   environment       = "production"
   allocated_storage = "20"
   database_name     = var.production_database_name
