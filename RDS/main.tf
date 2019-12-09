@@ -58,7 +58,7 @@ resource "aws_security_group" "rds_sg" {
   }
 }
 
-resource "aws_db_instance" "rds" {
+resource "aws_db_instance" "RDS" {
   identifier             = "var.environment-database"
   allocated_storage      = var.allocated_storage
   engine                 = "mysql"
