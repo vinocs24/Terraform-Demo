@@ -2,9 +2,9 @@
 // Shared Variables
 //----------------------------------------------------------------------
 
-Variable "vpc-id" {}
-Variable "subnet-id-1" {}
-Variable "subnet-id-2" {}
+variable "vpc-id" {}
+variable "subnet-id-1" {}
+variable "subnet-id-2" {}
 variable "security-group-id" {}
 variable "rds-security-group" {}
 variable "key_name" {}
