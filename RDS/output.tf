@@ -1,5 +1,5 @@
 output "rds_address" {
-  value = aws_db_instance.RDS.address
+  value = aws_db_instance.rds.address
 }
 
 output "db_access_sg_id" {
@@ -7,13 +7,13 @@ output "db_access_sg_id" {
 }
 
 output "rds_user" {
-  value = aws_db_instance.RDS.username
+  value = aws_db_instance.rds.username
 }
 
 output "rds_password" {
-  value = aws_db_instance.RDS.password
+  value = aws_db_instance.rds.password
 }
 
 output "rds_dbname" {
-  value = aws_db_instance.RDS.name
+  value = aws_db_instance.rds.name
 }
