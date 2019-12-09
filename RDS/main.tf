@@ -26,7 +26,7 @@ resource "aws_security_group" "db_access_sg" {
 
 resource "aws_security_group" "rds_sg" {
   name = var.environment-rds-sg
-  description = var.environment Security Group
+  description = "var.environment Security Group"
   vpc_id = var.vpc_id
   tags = {
     Name = "var.environment-rds-sg"
