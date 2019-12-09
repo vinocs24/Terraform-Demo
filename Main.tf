@@ -1,16 +1,20 @@
-provider "aws" {
-  region = "us-east-1"
+# Terraform state will be stored in S3
+terraform {
+  backend "s3" {
+    bucket = "terraform-bucket-vino1234"
+    key    = "terraform.tfstate"
+    region = "us-west-2"
+  }
 }
 
-module "iam" {
-    source = "./iam"
+# Use AWS Terraform provider
+provider "aws" {
+  region = "us-west-2"
 }
 
 module "vpc" {
     source = "./vpc"
 }
-
-
 
 module "ec2" {
     source = "./ec2"
