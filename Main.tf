@@ -13,11 +13,11 @@ provider "aws" {
 }
 
 module "VPC" {
-    source = "./vpc"
+    source = "./VPC"
 }
 
 module "EC2" {
-    source = "./ec2"
+    source = "./EC2"
 
     vpc-id                      = module.vpc.id
     security-group-id           = module.vpc.security-group-id
