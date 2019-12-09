@@ -35,3 +35,7 @@ resource "aws_security_group" "demo-vpc-security-group" {
         cidr_blocks = ["0.0.0.0/0"]
     }
 }
+
+output "security-group-id" {
+  value = aws_security_group.demo-vpc-security-group.id
+}
