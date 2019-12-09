@@ -12,11 +12,11 @@ provider "aws" {
   region = "us-west-2"
 }
 
-module "vpc" {
+module "VPC" {
     source = "./vpc"
 }
 
-module "ec2" {
+module "EC2" {
     source = "./ec2"
 
     vpc-id                      = module.vpc.id
