@@ -19,7 +19,7 @@ module "VPC" {
 module "EC2" {
     source = "./EC2"
 
-    vpc-id                      = module.VPC.id
+    vpc-id                      = module.vpc.id
     security-group-id           = module.vpc.security-group-id
     rds-security-group          = module.rds.db_access_sg_id
     subnet-id-1                 = module.vpc.subnet1-id
