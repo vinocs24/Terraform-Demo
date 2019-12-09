@@ -8,6 +8,6 @@ resource "aws_launch_configuration" "ecs-launch-configuration" {
     user_data                   = file("EC2/installing-components.sh")
     
     tags = {
-      Name = "ec2-instance"
+      Name = ec2-instance
     }
 }
