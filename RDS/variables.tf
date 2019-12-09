@@ -30,7 +30,7 @@ variable "multi_az" {
 }
 
 variable "database_name" {
-  default     = "dummy_data"
+  default     = "sqldemo"
   description = "The database name"
 }
 
@@ -40,6 +40,6 @@ variable "database_username" {
 }
 
 variable "database_password" {
-  default     = "testing123"
+  default     = "testing"
   description = "The password of the database"
 }
