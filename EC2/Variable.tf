@@ -15,6 +15,10 @@ variable "key_name" {}
 // Launch Configuration Variables
 //----------------------------------------------------------------------
 
+variable "launch-configuration-name" {
+    description = "The name for the autoscaling group for the cluster."
+    default = "demo-launch-configuration"
+}    
 
 variable "image-id" {
     description = "The name for the autoscaling group for the cluster."
