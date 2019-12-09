@@ -27,7 +27,7 @@ module "EC2" {
     key_name                    = var.key_name
 }
 
-module "rds" {
+module "RDS" {
   source            = "./rds"
   environment       = "production"
   allocated_storage = "20"
