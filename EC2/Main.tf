@@ -4,7 +4,7 @@ resource "aws_launch_configuration" "ecs-launch-configuration" {
     instance_type               = var.instance-type
     security_groups             = [var.security-group-id, var.rds-security-group]
     associate_public_ip_address = true
-    key_name                    = var.ecs-key-pair-name
+    key_name                    = var.key_name
     user_data                   = file("installing-components.sh")
     
     tags = {
