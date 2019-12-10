@@ -7,6 +7,6 @@ resource "aws_vpc" "demo-vpc" {
   }
 }
 
-output "id" {
+output "vpc_id " {
   value = aws_vpc.demo-vpc.id
 }
