@@ -49,12 +49,6 @@ resource "aws_security_group" "rds_sg" {
   }
 }
  
-
-output "rds-security-group" {
-  value = aws_security_group.rds_sg.id
-}  
-  
-  
 resource "aws_db_instance" "rds" {
   identifier             = var.environment
   allocated_storage      = var.allocated_storage
