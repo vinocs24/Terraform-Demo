@@ -61,6 +61,7 @@ resource "aws_security_group" "db_access_sg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+}  
   
   output "security-group-id" {
   value = aws_security_group.demo-vpc-security-group.id
