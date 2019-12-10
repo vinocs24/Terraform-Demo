@@ -18,6 +18,7 @@ module "VPC" {
 
 module "EC2" {
     source = "./EC2"
+    source = "./RDS"
 
     vpc-id                      = "module.vpc.id"
     security-group-id           = "module.vpc.security-group-id"
