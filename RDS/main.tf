@@ -43,7 +43,7 @@ resource "aws_security_group" "db_access_sg" {
   }
 }
   
-resource "aws_security_group_db" "rds_sg" {
+resource "aws_security_group" "rds_sg" {
   name = "var.environment-rds-sg"
   description = "var.environment-Security Group"
   vpc_id = var.vpc_id
@@ -61,7 +61,7 @@ resource "aws_security_group_db" "rds_sg" {
       from_port = 3306
       to_port   = 3306
       protocol  = "tcp"
-      security_groups = [aws_security_group_db.rds_sg.id]
+      security_groups = [aws_security_group.rds_sg.id]
   }
 
   // outbound internet access
@@ -91,7 +91,7 @@ resource "aws_db_instance" "rds" {
   username               = var.database_username
   password               = var.database_password
   db_subnet_group_name   = aws_db_subnet_group.rds_subnet_group.id
-  vpc_security_group_ids = [aws_security_group_db.rds_sg.id]
+  vpc_security_group_ids = [aws_security_group.rds_sg.id]
   skip_final_snapshot    = true
   tags = {
     Environment = "var.environment"
