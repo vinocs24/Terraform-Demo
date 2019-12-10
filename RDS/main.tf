@@ -13,11 +13,6 @@ resource "aws_db_subnet_group" "rds_subnet_group" {
 }
 
 /* Security Group for resources that want to access the Database */
-resource "aws_security_group" "db_access_sg" {
-  vpc_id      = var.vpc_id
-  name        = "var.environment-db-access-sg"
-  description = "Allow access to RDS"
-}
   
 resource "aws_security_group" "rds_sg" {
   name = "var.environment-rds-sg"
@@ -37,7 +32,7 @@ resource "aws_security_group" "rds_sg" {
       from_port = 3306
       to_port   = 3306
       protocol  = "tcp"
-      security_groups = [aws_security_group.db_access_sg.id]
+      security_groups = [aws_security_group.rds_sg.id]
   }
 
   // outbound internet access
