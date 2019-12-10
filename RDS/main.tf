@@ -18,21 +18,6 @@ resource "aws_security_group" "db_access_sg" {
   name        = "var.environment-db-access-sg"
   description = "Allow access to RDS"
 
-  tags = {
-    Name        = "var.environment-db-access-sg"
-    Environment = "var.environment"
-  }
-}
-
-resource "aws_security_group" "rds_sg" {
-  name = "var.environment-rds-sg"
-  description = "var.environment Security Group"
-  vpc_id = var.vpc_id
-  tags = {
-    Name = "var.environment-rds-sg"
-    Environment =  "var.environment"
-  }
-
   // allows traffic from the SG itself
   ingress {
       from_port = 0
@@ -58,6 +43,11 @@ resource "aws_security_group" "rds_sg" {
   }
 }
 
+output "rds-security-group" {
+  value = aws_security_group.db_access_sg.id
+}
+  
+  
 resource "aws_db_instance" "rds" {
   identifier             = var.environment
   allocated_storage      = var.allocated_storage
