@@ -53,7 +53,10 @@ resource "aws_security_group" "rds_sg" {
 output "rds-security-group" {
   value = aws_security_group.db_access_sg.id
 }
-  
+
+output "rds-security-group" {
+  value = aws_security_group.rds_sg.id
+}  
   
   
 resource "aws_db_instance" "rds" {
