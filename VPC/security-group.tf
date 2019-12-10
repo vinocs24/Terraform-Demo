@@ -45,14 +45,14 @@ resource "aws_security_group" "db_access_sg" {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    cidr_blocks = [var.vpc_cidr_block]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
     from_port   = 8
     to_port     = 0
     protocol    = "icmp"
-    cidr_blocks = [var.vpc_cidr_block]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
