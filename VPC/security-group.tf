@@ -39,3 +39,30 @@ resource "aws_security_group" "demo-vpc-security-group" {
 output "security-group-id" {
   value = aws_security_group.demo-vpc-security-group.id
 }
+
+
+resource "aws_security_group" "db_access_sg" {
+  name        = "db_access_sg"
+  description = "Access to the RDS instances from the VPC"
+  vpc_id      = aws_vpc.demo-vpc.id
+
+  ingress {
+    from_port   = 3306
+    to_port     = 3306
+    protocol    = "tcp"
+    cidr_blocks = [var.vpc_cidr_block]
+  }
+
+  ingress {
+    from_port   = 8
+    to_port     = 0
+    protocol    = "icmp"
+    cidr_blocks = [var.vpc_cidr_block]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
